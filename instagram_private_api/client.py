@@ -169,7 +169,6 @@ class Client(AccountsEndpointsMixin, DiscoverEndpointsMixin, FeedEndpointsMixin,
         if not proxy_handler:
             proxy = kwargs.pop('proxy', None)
             if proxy:
-                warnings.warn('Proxy support is alpha.', UserWarning)
                 parsed_url = compat_urllib_parse_urlparse(proxy)
                 if parsed_url.netloc and parsed_url.scheme:
                     proxy_address = '{0!s}://{1!s}'.format(parsed_url.scheme, parsed_url.netloc)
